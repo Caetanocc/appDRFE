@@ -45,30 +45,8 @@
             <th> </th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td>Mark</td>
-            <td>12/12/2002</td>
-            <td>Avós</td>
-            <td><a class="link" data-bs-toggle="modal" data-bs-target="#pontosModal">12</a> </td>
-            <td>
-              <a data-bs-target="#editModal"   class="edit"   data-bs-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-              <a data-bs-target="#deleteModal" class="delete" data-bs-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-            </td>
+        <tbody id="lista-pessoas">
 
-          </tr>
-          <tr>
-            <td>Jaqueline</td>
-            <td>01/02/2000</td>
-            <td>irmã</td>
-            <td>-5</td>
-          </tr>
-          <tr>
-            <td>Larryssa</td>
-            <td>02/02/2002</td>
-            <td>Tia</td>
-            <td>20</td>
-          </tr>
         </tbody>
       </table>
 
@@ -84,15 +62,15 @@
               <form>
                 <div class="mb-3">
                   <label for="nome" class="col-form-label">Nome:</label>
-                  <input type="text" class="form-control" id="nome">
+                  <input type="text" class="form-control" id="inputNome">
                 </div>
                 <div class="mb-3">
                   <label for="dtnasc" class="col-form-label">Data Nasc:</label>
-                  <input type="date" class="form-control" id="dtnasc">
+                  <input type="date" class="form-control" id="inputDtnasc">
                 </div>
                 <div class="mb-3">
                   <label for="dtnasc" class="col-form-label">Tipo Relaciomento</label>
-                  <select class="form-select" aria-label="Default select example">
+                  <select class="form-select" aria-label="Default select example" id="inputTiporel">
                     <option selected>Selecione Tipo de Relaciomento</option>
                     <option value="1">Conjuge</option>
                     <option value="2">Companheiro(a)</option>
@@ -112,7 +90,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Salvar</button>
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="btnSalvarNova">Salvar</button>
             </div>
           </div>
         </div>
@@ -129,18 +107,25 @@
             <div class="modal-body">
               <form>
 
+                <input type="hidden" id="chavePessoa" value="">
+
                 <label for="customRange1" class="form-label">Comportamento</label>
-                <input type="range" class="form-range" min="-5" max="5" id="customRange1">
+                <output id="amount1" for="range1" class="pontos">0</output>
+                <input type="range" class="form-range" min="-5" max="5" id="range1" oninput="amount1.value=range1.value">
+                
                 <label for="customRange2" class="form-label">Atitude</label>
-                <input type="range" class="form-range" min="-5" max="5" id="customRange2">
+                <output id="amount2" for="range2" class="pontos">0</output>
+                <input type="range" class="form-range" min="-5" max="5" id="range2" oninput="amount2.value=range2.value">
+                
                 <label for="customRange3" class="form-label">Tom de voz</label>
-                <input type="range" class="form-range" min="-5" max="5" id="customRange3">
+                <output id="amount3" for="range3" class="pontos">0</output>
+                <input type="range" class="form-range" min="-5" max="5" id="range3" oninput="amount3.value=range3.value">
                 
               </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-              <button type="button" class="btn btn-primary">Salvar</button>
+              <button type="button" class="btn btn-primary" id="btnSalvarPontos">Salvar</button>
             </div>
           </div>
         </div>
@@ -213,7 +198,10 @@
       </div>
     </div>
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script src="fbconfig.js"></script>
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
 </body>
 </html>

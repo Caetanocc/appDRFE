@@ -1,6 +1,6 @@
 nav 
 {
-    background: linear-gradient(to right, #00c79c, #2f00ff);
+    background: linear-gradient(to left, #00c79c, #aa00ff);
 }
 .carousel-item
 {
@@ -55,4 +55,8 @@ h2
 .btnDel {
     pointer-events: none;
     cursor: pointer;
+}
+
+img {
+    width: 30px;
 }
